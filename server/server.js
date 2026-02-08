@@ -247,7 +247,7 @@ app.get('/api/calendar', async (req, res) => {
 const buildPath = path.join(__dirname, '..', 'dist');
 app.use(express.static(buildPath));
 
-app.get('*', (req, res) => {
+app.get('(.*)', (req, res) => {
     res.sendFile(path.join(buildPath, 'index.html'));
 });
 
